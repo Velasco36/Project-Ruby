@@ -65,6 +65,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "letter_opener"
+
 end
 
 group :test do
@@ -79,3 +81,11 @@ gem "tailwindcss-rails", "~> 2.0"
 gem "pg_search", "~> 2.3"
 
 gem "pagy", "~> 6.0"
+
+gem "view_component", "~> 3.5"
+gem "webmock"
+
+gem "sidekiq", "~> 7.1"
+
+gem 'stimulus-rails'
+

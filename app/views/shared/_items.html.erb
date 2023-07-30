@@ -1,0 +1,9 @@
+ <%= link_to t('shared.header.add'), new_product_path, class: "mx-2 text-teal-500 font-bold", data: { turbo_frame: "modal" } if Current.user %>
+<%= link_to t('shared.header.favorites'), favorites_path, class: "mx-2xl text-teal-500 font-bold" if Current.user %>
+<%= link_to t('categories.index.new'), categories_path, class: "mx-2xl text-teal-500 font-bold" if Current.user&.admin? %>
+<%= link_to t('shared.header.login'), new_session_path, class: "mx-2xl text-teal-500 font-bold" unless Current.user %>
+<%= link_to t('shared.header.register'), new_user_path, class: "mx-2xl text-teal-500 font-bold" unless Current.user %>
+<%= link_to t('shared.header.logout'), session_path(Current.user.id), data: {
+      turbo_method: :delete,
+      turbo_confirm: t('common.confirm')
+    }, class: "mx-2xl text-teal-500 font-bold" if Current.user %>
