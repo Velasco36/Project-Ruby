@@ -1,5 +1,6 @@
-<h1><%= t('.title')%></h1>
 
 
  <%= render partial: 'category', collection: @categories %>
- <%= link_to t('.new'), new_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+<div class="text-center">
+  <%= link_to t('.new'), new_category_path, class: "inline-flex mt-6 items-center p-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:border-blue-800 focus:shadow-outline-blue active:bg-blue-800 transition ease-in-out duration-150" %>
+</div>

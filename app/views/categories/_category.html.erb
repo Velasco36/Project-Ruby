@@ -1,40 +1,36 @@
-
-<div id="<%= dom_id category %>" class="relative overflow-x-auto shadow-md sm:rounded-lg">
-
-  <table class="w-full text-sm text-gray-500 dark:text-gray-400">
-
-    <thead>
-      <tr class="text-xs font-medium text-gray-500 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-        <th class="px-6 py-3"> <%= t('.name') %> </th>
-        <th class="px-6 py-3"> <%= t('.edit') %> </th>
-        <th class="px-6 py-3"> <%= t('.delete') %> </th>
-      </tr>
-    </thead>
-
-    <tbody>
-
-      <% @categories.each do |category| %>
-
-        <tr class="border-b dark:border-gray-700">
-
-          <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-            <%= category.name %>
-          </th>
-
-          <td class="px-6 py-4">
-            <%= link_to t('.edit'), edit_category_path(category), class: "text-blue-600 dark:text-blue-500 hover:underline" %>
-          </td>
-
-          <td class="px-6 py-4">
-            <%= button_to t('.delete'), category_path(category), method: :delete, class: "text-blue-600 dark:text-blue-500 hover:underline", data: { confirm: t('.confirm') } %>
-          </td>
-
-        </tr>
-
-      <% end %>
-
-    </tbody>
-
-  </table>
-
+<div id="<%= dom_id category %>" >
+  <div class="flex justify-center">
+    <div class="w-full lg:w-1/2">
+      <table class="w-full">
+        <thead>
+          <tr class="text-xs font-medium uppercase bg-gray-100 border-b border-gray-200">
+            <th class="px-6 py-3"><%= t('.name') %></th>
+            <th class="px-6 py-3"><%= t('.edit') %></th>
+            <th class="px-6 py-3"><%= t('.delete') %></th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr class="border-b ">
+            <td class=" w-4/12  px-6 py-4 text-center items-center"><%= category.name %></td>
+            <td class="w-4/12 px-6 text-center items-center  py-4 ">
+              <%= link_to  edit_category_path(category)do %>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ml-7 h-6 text-center items-center justify-center">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                </svg>
+              <% end%>
+            </td>
+            <td class="w-4/12 flex  px-6  py-4 text-center items-center ">
+              <%= link_to category_path(category), data: {
+                turbo_method: :delete,
+                turbo_confirm: t('common.confirm') } do %>
+                <svg class="  h-6 text-red-600 hover:text-red-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
