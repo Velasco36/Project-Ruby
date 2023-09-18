@@ -1,9 +1,10 @@
-<div id="<%= dom_id(product) %>">
-  <%= image_tag product.photo, width: 200 if product.photo.attached? %>
-
-  <h1 class='title'><%= product.title %></h1>
-
-  <p class='description'><%= product.description %></p>
-
-  <span class='price'><%= product.price %>$</span>
+<div class="flex flex-col items-center justify-center h-screen">
+  <div id="<%= dom_id(product) %>" class="max-w-sm p-4 bg-white rounded-lg shadow-md">
+    <%= image_tag product.photo, class:"rounded-t-lg w-full", width: 200 if product.photo.attached? %>
+    <div class="px-5 pb-5 text-center">
+      <h1 class='text-gray-900 font-semibold text-xl'><%= product.title %></h1>
+      <p class='text-gray-700'><%= product.description %></p>
+      <span class='font-bold text-black-500 mt-2'><%= product.price %>$</span>
+    </div>
+  </div>
 </div>

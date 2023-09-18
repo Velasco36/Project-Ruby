@@ -9,4 +9,5 @@
   user_path(@product.user.username)%>
 
 <%= render partial: 'favorite', locals: {product: @product } %>
-<%= turbo_stream_from @product %>
+<div data-controller="websocket-product" data-productid="<%= @product.id %>"></div>
+<%# <%= turbo_stream_from @product %> 

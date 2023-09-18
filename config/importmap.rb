@@ -7,3 +7,4 @@ pin "tailwindcss-stimulus-components" # @3.0.4
 pin "@hotwired/stimulus", to: "@hotwired--stimulus.js" # @3.2.1
 pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
+pin "@rails/actioncable", to: "@rails--actioncable.js" # @7.0.4

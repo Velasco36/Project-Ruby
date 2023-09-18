@@ -89,3 +89,6 @@ gem "sidekiq", "~> 7.1"
 
 gem 'stimulus-rails'
 
+
+
+gem 'actioncable'
